@@ -1,18 +1,25 @@
-//import compareNumbers from './compareNumbers.js';
-
 const finalMessage = document.getElementById('final-message');
 const numberGuessInput = document.getElementById('number-guess');
 const submitButton = document.getElementById('submitButton');
 const guessesRemaining = document.getElementById('guesses-remaining');
 
-
-//let correctAnswer;
-
-let numberGuess = Number(numberGuessInput.value);
 let correctAnswer = Math.ceil(Math.random() * 20);
 
+console.log(correctAnswer);
 
 let triesRemaining = 4;
+
+function compareNumbers() {   
+    if (numberGuessInput.value > correctAnswer){
+        finalMessage.textContent = 'Too high!';
+    }
+    else if (numberGuessInput.value < correctAnswer) {
+        finalMessage.textContent = 'Too low!';
+    }
+    else {   
+        finalMessage.textContent = 'Nice Guess! You got it!';
+    }
+}
 
 submitButton.addEventListener('click', () => {
     compareNumbers();
@@ -25,18 +32,6 @@ submitButton.addEventListener('click', () => {
     }
 });
 
-function compareNumbers(numberGuess, correctAnswer) {
-    if (numberGuess === correctAnswer) {   
-        finalMessage.textContent = 'Nice Guess! You got it!';
-    }
-    else if (numberGuess > correctAnswer){
-        finalMessage.textContent = 'Too high!';
-    }
-    else if (numberGuess < correctAnswer) {
-        finalMessage.textContent = 'Too low!';
-    }
-    
-}
 
 
 

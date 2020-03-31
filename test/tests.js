@@ -70,4 +70,4 @@ test('isEqual function', function(assert){
     assert.equal(isEqualResult, expected);
 
 
-})
+});

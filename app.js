@@ -2,6 +2,7 @@ const finalMessage = document.getElementById('final-message');
 const numberGuessInput = document.getElementById('number-guess');
 const submitButton = document.getElementById('submitButton');
 const guessesRemaining = document.getElementById('guesses-remaining');
+const resetButton = document.getElementById('reset-button');
 
 let correctAnswer = Math.ceil(Math.random() * 20);
 
@@ -17,7 +18,7 @@ function compareNumbers() {
         finalMessage.textContent = 'Too low!';
     }
     else {   
-        finalMessage.textContent = 'Nice Guess! You got it!';
+        finalMessage.textContent = 'Nice Guess! You got it!';    
     }
 }
 
@@ -31,6 +32,12 @@ submitButton.addEventListener('click', () => {
         document.getElementById('number-guess').disabled = true;
     }
 });
+
+resetButton.addEventListener('click', () => {
+    location.reload();
+});
+
+
 
 
 

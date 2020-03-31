@@ -30,6 +30,8 @@ submitButton.addEventListener('click', () => {
     if (triesRemaining === 0) {
         finalMessage.textContent = 'Game over! You are a bad guesser..';
         document.getElementById('number-guess').disabled = true;
+        guessesRemaining.textContent = '0';
+        document.getElementById('submitButton').disabled = true;
     }
 });
 

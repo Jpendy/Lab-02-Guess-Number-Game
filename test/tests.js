@@ -58,14 +58,16 @@ test('isEqual function', function(assert){
 
     //arrange
     const guess = 12;
-    const correctAnswer
-
+    const correctAnswer = 12;
+    const expected = 0;
 
     //act
 
-
+    const isEqualResult = isEqual(guess, correctAnswer);
 
     //assert
+
+    assert.equal(isEqualResult, expected);
 
 
 })

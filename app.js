@@ -26,6 +26,9 @@ submitButton.addEventListener('click', () => {
     triesRemaining--;
     guessesRemaining.textContent = triesRemaining;
 
+    if (numberGuessInput.value > 20){
+        alert('That is an invalid number');
+    }
     if (triesRemaining === 0) {
         finalMessage.textContent = 'Game over! You are a bad guesser..';
         document.getElementById('number-guess').disabled = true;
@@ -33,6 +36,8 @@ submitButton.addEventListener('click', () => {
         document.getElementById('submitButton').disabled = true;
     }
 });
+
+
 
 resetButton.addEventListener('click', () => {
     location.reload();

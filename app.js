@@ -1,3 +1,5 @@
+import { compareNumbers } from './compareNumbers.js';
+
 const finalMessage = document.getElementById('final-message');
 const numberGuessInput = document.getElementById('number-guess');
 const submitButton = document.getElementById('submitButton');
@@ -8,23 +10,40 @@ let correctAnswer = Math.ceil(Math.random() * 20);
 
 let triesRemaining = 4;
 
-function compareNumbers() {   
-    if (numberGuessInput.value > correctAnswer){
-        finalMessage.textContent = 'Too high!';
-    }
-    else if (numberGuessInput.value < correctAnswer) {
-        finalMessage.textContent = 'Too low!';
-    }
-    else {   
-        finalMessage.textContent = 'Nice Guess! You got it!';
-        document.getElementById('submitButton').disabled = true;    
-    }
-}
+// function compareNumbers() {   
+//     if (numberGuessInput.value > correctAnswer){
+//         finalMessage.textContent = 'Too high!';
+//     }
+//     else if (numberGuessInput.value < correctAnswer) {
+//         finalMessage.textContent = 'Too low!';
+//     }
+//     else {   
+//         finalMessage.textContent = 'Nice Guess! You got it!';
+//         document.getElementById('submitButton').disabled = true;    
+//     }
+// }
 
 submitButton.addEventListener('click', () => {
-    compareNumbers();
-    triesRemaining--;
-    guessesRemaining.textContent = triesRemaining;
+    //compareNumbers(numberGuessInput, correctAnswer);
+    let compareResult = compareNumbers(numberGuessInput, correctAnswer);
+
+    if (compareResult === 'Too high!')
+    {
+        finalMessage.textContent = 'Too high!';
+        triesRemaining = updateSpan(triesRemaining, guessesRemaining);
+    } 
+    else if (compareResult === 'Too low!')
+    {
+        finalMessage.textContent = 'Too low!';
+        triesRemaining = updateSpan(triesRemaining, guessesRemaining);
+    } 
+    else 
+    {
+        finalMessage.textContent = 'Nice Guess! You got it!';
+        document.getElementById('submitButton').disabled = true;
+    }
+    //triesRemaining--;
+    //guessesRemaining.textContent = triesRemaining;
 
     if (numberGuessInput.value > 20){
         alert('That is an invalid number');
@@ -37,6 +56,11 @@ submitButton.addEventListener('click', () => {
     }
 });
 
+function updateSpan(triesRemaining, guessesRemaining){
+    triesRemaining--;
+    guessesRemaining.textContent = triesRemaining;
+    return triesRemaining;
+}
 
 
 resetButton.addEventListener('click', () => {

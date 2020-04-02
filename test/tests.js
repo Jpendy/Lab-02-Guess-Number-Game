@@ -1,4 +1,5 @@
 //import './example.test.js';
+import { compareNumbers } from '../compareNumbers.js';
 
 const test = QUnit.test;
 
@@ -68,6 +69,25 @@ test('isEqual function', function(assert){
     //assert
 
     assert.equal(isEqualResult, expected);
+
+
+});
+
+test('compareNumbers function', function(assert){
+
+    //arrange
+    
+    const numberGuessInput = 12;
+    const correctAnswer = 12;
+    const expected = 'Nice Guess! You got it!';
+
+    //act
+
+    const result = compareNumbers(numberGuessInput, correctAnswer);
+
+    //assert
+
+    assert.equal(result, expected);
 
 
 });

@@ -7,7 +7,6 @@ const guessesRemaining = document.getElementById('guesses-remaining');
 const resetButton = document.getElementById('reset-button');
 
 let correctAnswer = Math.ceil(Math.random() * 20);
-console.log(correctAnswer);
 let triesRemaining = 4;
 
 submitButton.addEventListener('click', () => {

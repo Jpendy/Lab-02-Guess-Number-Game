@@ -7,7 +7,6 @@ const guessesRemaining = document.getElementById('guesses-remaining');
 const resetButton = document.getElementById('reset-button');
 
 let correctAnswer = Math.ceil(Math.random() * 20);
-console.log(correctAnswer);
 let triesRemaining = 4;
 
 submitButton.addEventListener('click', () => {
@@ -22,7 +21,7 @@ submitButton.addEventListener('click', () => {
         triesRemaining = updateSpan(triesRemaining, guessesRemaining);
     } 
     else {
-        makesFinalMessage(finalMessage, 'Nice guess! You got it!')
+        makesFinalMessage(finalMessage, 'Nice guess! You got it!');
         document.getElementById('submitButton').disabled = true;
     }
    
@@ -51,7 +50,6 @@ function makesFinalMessage(span, message) {
     span.textContent = message;
 }
 
-
 // function compareNumbers() {   
 //     if (numberGuessInput.value > correctAnswer){
 //         finalMessage.textContent = 'Too high!';
@@ -64,5 +62,3 @@ function makesFinalMessage(span, message) {
 //         document.getElementById('submitButton').disabled = true;    
 //     }
 // }
-
-

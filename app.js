@@ -21,7 +21,7 @@ submitButton.addEventListener('click', () => {
         triesRemaining = updateSpan(triesRemaining, guessesRemaining);
     } 
     else {
-        makesFinalMessage(finalMessage, 'Nice guess! You got it!')
+        makesFinalMessage(finalMessage, 'Nice guess! You got it!');
         document.getElementById('submitButton').disabled = true;
     }
    
@@ -50,7 +50,6 @@ function makesFinalMessage(span, message) {
     span.textContent = message;
 }
 
-
 // function compareNumbers() {   
 //     if (numberGuessInput.value > correctAnswer){
 //         finalMessage.textContent = 'Too high!';
@@ -63,5 +62,3 @@ function makesFinalMessage(span, message) {
 //         document.getElementById('submitButton').disabled = true;    
 //     }
 // }
-
-

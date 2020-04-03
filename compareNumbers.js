@@ -1,18 +1,13 @@
-//compars numbers and sends if they are the same
-
+//compares numbers and sends if they are the same
 
 export function compareNumbers(numberGuessInput, correctAnswer) {   
     if (numberGuessInput.value > correctAnswer){
-        return 'Too high!';
+        return 1;
     }
     else if (numberGuessInput.value < correctAnswer) {
-        return 'Too low!';
+        return 2;
     }
     else {   
-        return 'Nice Guess! You got it!';
-         
-          
-    }
-    
-    
+        return 3;      
+    }   
 }
